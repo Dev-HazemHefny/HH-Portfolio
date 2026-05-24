@@ -95,32 +95,32 @@ export default function Experience() {
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className={`relative flex flex-col md:flex-row ${isLeft ? 'md:flex-row-reverse' : ''} gap-8 items-stretch`}
+                className={`relative flex flex-col md:flex-row ${isLeft ? 'md:flex-row-reverse' : ''} gap-4 md:gap-8 items-stretch`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-12 h-12 bg-dark border-2 border-accent rounded-full flex items-center justify-center z-10 flex-shrink-0">
-                  <Icon className="text-accent" size={24} />
+                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-10 md:w-12 h-10 md:h-12 bg-dark border-2 border-accent rounded-full flex items-center justify-center z-10 flex-shrink-0">
+                  <Icon className="text-accent" size={20} />
                 </div>
 
                 {/* Content */}
-                <div className="w-full md:w-1/2 bg-dark-secondary/50 border border-accent/20 hover:border-accent/50 rounded-2xl p-6 ml-16 md:ml-0 transition-all duration-300 glow">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-bold text-white flex-1">{item.title}</h3>
+                <div className="sm:w-1/4  md:w-1/2  bg-dark-secondary/50 border border-accent/20 hover:border-accent/50 rounded-lg md:rounded-2xl p-3 md:p-6 ml-12 md:ml-0 transition-all duration-300 glow overflow-hidden">
+                  <div className="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                    <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white flex-1 leading-snug break-words">{item.title}</h3>
                     {item.type === 'education' && (
-                      <span className="text-xs bg-accent/20 text-accent px-3 py-1 rounded-full ml-2">
+                      <span className="text-xs bg-accent/20 text-accent px-2 sm:px-3 py-1 rounded-full whitespace-nowrap flex-shrink-0">
                         Education
                       </span>
                     )}
                   </div>
 
-                  <p className="text-accent font-semibold mb-1">{item.company}</p>
-                  <p className="text-gray-400 text-sm mb-4">{item.period}</p>
+                  <p className="text-accent font-semibold mb-1 text-xs sm:text-sm md:text-base break-words">{item.company}</p>
+                  <p className="text-gray-400 text-xs sm:text-sm mb-2 md:mb-3">{item.period}</p>
 
-                  <div className="space-y-2">
+                  <div className="space-y-1 md:space-y-2">
                     {item.achievements.map((achievement, aidx) => (
-                      <div key={aidx} className="flex gap-3">
-                        <FaCheckCircle className="text-accent mt-1 flex-shrink-0" size={16} />
-                        <p className="text-gray-300 text-sm">{achievement}</p>
+                      <div key={aidx} className="flex gap-1.5 md:gap-3 items-start">
+                        <FaCheckCircle className="text-accent mt-0.5 flex-shrink-0" size={10} />
+                        <p className="text-gray-300 text-xs sm:text-sm md:text-base leading-tight break-words w-full">{achievement}</p>
                       </div>
                     ))}
                   </div>

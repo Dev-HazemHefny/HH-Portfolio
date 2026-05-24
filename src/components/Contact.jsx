@@ -80,7 +80,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-4 gap-2 md:gap-8 mb-12">
           {/* Contact Methods */}
           {contactMethods.map((method, idx) => {
             const Icon = method.icon;
@@ -94,15 +94,15 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-dark border border-accent/20 hover:border-accent/50 rounded-2xl p-6 text-center transition-all duration-300 glow group"
+                className="bg-dark border border-accent/20 hover:border-accent/50 rounded-lg md:rounded-2xl p-2 md:p-6 text-center transition-all duration-300 glow group"
               >
-                <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                    <Icon className="text-accent group-hover:scale-110 transition-transform" size={32} />
+                <div className="flex justify-center mb-2 md:mb-4">
+                  <div className="w-10 md:w-16 h-10 md:h-16 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <Icon className="text-accent group-hover:scale-110 transition-transform" size={20} />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{method.label}</h3>
-                <p className="text-gray-400 text-sm break-all">{method.value}</p>
+                <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-white mb-2 leading-tight break-words">{method.label}</h3>
+                <p className="text-gray-400 text-sm break-all hidden md:block">{method.value}</p>
               </motion.a>
             );
           })}
