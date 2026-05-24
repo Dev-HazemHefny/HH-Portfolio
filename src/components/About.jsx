@@ -17,7 +17,7 @@ export default function About() {
           <div className="flex justify-center">
             <div className="relative w-64 h-64 md:w-72 md:h-72 bg-gradient-to-br from-accent/30 to-primary/30 rounded-2xl border-2 border-accent/30 hover:border-accent/50 transition-all flex items-center justify-center glow overflow-hidden">
               <Image 
-                src="/images/myimg.jpg" 
+                src="/images/myimg.JPG" 
                 alt="Profile Picture" 
                 fill
                 priority
